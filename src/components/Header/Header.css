@@ -1,0 +1,33 @@
+header {
+    width: 100%;
+
+    padding: 10rem;
+
+}
+
+header h1 {
+    font-size: 5rem;
+    
+}
+
+header p {
+    font-size: 2rem;
+    
+}
+
+header h1, header p {
+    color: #ccc;
+    transition: 0.3s;
+}
+
+h1:hover, p:hover {
+    text-shadow: 0 0 15px #fff;
+} 
+
+.danger {
+    background-color: #ab4525;
+}
+
+.info {
+    background-color: #4565ac;
+}

@@ -1,23 +1,21 @@
 import { useState } from "react"
 
-export const InputBusqueda = () => {
-    const [ textInput, setTextInput ] = useState('');
+export const InputBusqueda = ({placeholderText, onSearch, buscado }) => {
+    const [ terminoBuscado, setTerminoBuscado ] = useState('');
 
-    const handleSubmit = (event) => {
-        setTextInput(event.target.value)
-        console.log(event.target.value)
+    const handleSearch = (event) => {
+        setTerminoBuscado(event.target.value)
+        onSearch(event.target.value)
     }
 
     return (
         <>
             <input 
                 type='text'
-                value={textInput}
-                onChange={handleSubmit}
-                placeholder="Escribe algo...."
+                value={terminoBuscado}
+                onChange={handleSearch}
+                placeholder={placeholderText}
             />
-
-            <p>Escribiste: {textInput}</p>
         </>
     )
 }

@@ -1,21 +1,9 @@
-import { useState } from "react"
+import { useContador } from "../../hooks/useContador"
 
 
 export const Contador = () => {
     
-    const [ contador, setContador ] = useState(0)
-
-    const handleIncrementarContador = () => {
-        setContador(contador + 1)
-        /* contador += 1 // contador = contador + 1 */
-        console.log(contador)
-    }
-
-    const handleDecrementarContador = () => {
-        setContador(contador - 1)
-        /* contador -= 1 // contador = contador - 1 */
-        console.log(contador)
-    }
+    const [ contador, handleIncrementarContador, handleDecrementarContador ] = useContador(4)
 
     return(
         <>

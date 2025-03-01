@@ -3,12 +3,47 @@ import { Link } from "react-router-dom"
 
 export const Navbar = () => {
     return (
-        <nav className="nav-container">
-            <ul>
-                <Link to={'/'}>Inicio</Link>
-                <Link to={'/about'}>Sobre Nosotros</Link>
-                <Link to={'/digimons'}>Ver lista Digimon</Link>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
+            Navbar
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  Sobre Nostros
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/digimons">
+                  Lista Digimons
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link disabled" aria-disabled="true">
+                  Disabled
+                </Link>
+              </li>
             </ul>
-        </nav>
-    )
+          </div>
+        </div>
+      </nav>
+    );
 }

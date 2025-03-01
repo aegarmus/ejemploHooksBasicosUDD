@@ -14,6 +14,7 @@ export const AppRouter = () => {
                 <Route path="/" element={<Home />}/>
                 <Route path="/about" element={<About />} />
                 <Route path="/digimons" element={<DigimonList />}/>
+                {/* Agregar ruta NotFound*/}
             </Routes>
         </>
     )

@@ -14,21 +14,24 @@ export const CardDigimon = ({ digimon }) => {
 
 
     return (
-        <>
-            <div className="card-digimon">
-                <div className="card-digimon_header">
-                    <img src={digimon.image} alt="" className="card-header_img" />
-                    <h3 className="card-header_title">{digimon.name}</h3>
-                    <p><span>ID: </span>{digimon.id}</p>
-                    <button onClick={toggle} >Ver Detalles</button>
-                </div>
-            </div>
+      <>
+        <div className="card-digimon">
+          <div className="card-digimon_header">
+            <img src={digimon.image} alt="" className="card-header_img" />
+            <h3 className="card-header_title">{digimon.name}</h3>
+            <p>
+              <span className="text-blue-600 dark:text-sky-400">ID: </span>
+              {digimon.id}
+            </p>
+            <button onClick={toggle}>Ver Detalles</button>
+          </div>
+        </div>
 
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <Modal toggle={toggle} isOpen={isOpen}>
-                    <DigimonDetails digimonSelected={digimon.name} />
-                </Modal>
-            </ErrorBoundary>
-        </>
-    )
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Modal toggle={toggle} isOpen={isOpen}>
+            <DigimonDetails digimonSelected={digimon.name} />
+          </Modal>
+        </ErrorBoundary>
+      </>
+    );
 }
